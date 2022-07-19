@@ -12,4 +12,6 @@ We show one problem size with 3 different layouts
 2) input NHWC, kernel NHWC, output NHWC
 3) input NHWC, kernel NCHW, output NHWC
 
-We do not notice layout transpose kernel in case 1 and 2; Only in case 3 algorithm2 we see the "nchwToNhwcKernel" transpose call.
+We do not notice layout transpose kernel call in case 1 and 2 where all three tensors have the same layout.
+
+Only in case 3 algorithm2 we see the "nchwToNhwcKernel" transpose call, where kernel layout are different from input and output tensor.
